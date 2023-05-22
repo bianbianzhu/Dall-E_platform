@@ -1,0 +1,62 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      screens: {
+        xs: '480px',
+      },
+      colors: {
+        yellow: '#FEBC2C',
+        darkYellow: '#FDB813',
+        backgroundYellow: '#FDBC00',
+        orange: '#F7931D',
+        darkOrange: '#F5821F',
+        red: '#ED193A',
+        darkRed: '#D1213E',
+        burgundy: '#BE1D37',
+        lightBurgundy: '#8e0b29',
+        darkBurgundy: '#840A26',
+        tileBurgundy: '#6B0C21',
+        marron: '#620b1f',
+        black: '#060606',
+        fontDefault: '#222328',
+        backgroundBlack: '#10131f',
+        white: '#FFFFFF',
+        backgroundWhite: '#f9fafe',
+        green: '#00e46b',
+        darkGreen: '#00b95c',
+        lightGrey: '#DBDBDB',
+        tintColorLight: '#2F95DC',
+        purple: '#6469ff',
+        handleBar: '#7D4F59',
+        whiteOpacity: 'rgba(255,255,255, 0.37)',
+        blackOpacity: 'rgba(0,0,0, 0.2)',
+        transparent: 'transparent',
+        pink: '#cc00cc',
+        defaultGrey: '#cbd2dc',
+        borderGrey: '#e6ebf4',
+        darkGrey: '#6f6f6f',
+        palePink: '#e7d1d6',
+        yellowOpacity: 'rgba(252, 187, 44, 0.16)',
+        whiteOpacitiy70: 'rgba(252, 255,255, 0.77)',
+        whiteOpacitiy40: 'rgba(252, 255,255, 0.40)',
+        blackOpacity70: 'rgba(0,0,0, 0.7)',
+        blackOpacity40: 'rgba(0,0,0, 0.4)',
+      },
+      fontFamily: {
+        inter: ['Inter var', 'sans-serif'],
+      },
+      fontSize: {
+        '2xl': '2.5rem',
+        '3xl': '3.75rem',
+      },
+      boxShadow: {
+        card: '0 0 1px 0 rgba(189,192,207,0.06),0 10px 16px -1px rgba(189,192,207,0.2)',
+        cardhover:
+          '0 0 1px 0 rgba(189,192,207,0.06),0 10px 16px -1px rgba(189,192,207,0.4)',
+      },
+    },
+  },
+  plugins: [],
+};
