@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { IFetchAllPostsResponse, IPost } from '../constants/interfaces';
+import {
+  DeepReadonly,
+  IFetchAllPostsResponse,
+  IPost,
+} from '../constants/interfaces';
 import { fetchErrorHandler, fetchWrapper } from '../utils';
 
 const useFetchAllPosts = () => {
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const [posts, setPosts] = useState<DeepReadonly<IPost[]>>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>('');
 
@@ -19,7 +23,7 @@ const useFetchAllPosts = () => {
           }
         );
 
-        setPosts(data.data);
+        setPosts(data.data?.reverse() || []);
       } catch (err) {
         const errMsg = fetchErrorHandler(err);
         setErrMsg(errMsg);

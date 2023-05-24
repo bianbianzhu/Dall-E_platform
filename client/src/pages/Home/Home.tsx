@@ -1,6 +1,10 @@
 import { useRef, useState } from 'react';
 import Spinner from '../../components/Loader/Spinner/Spinner';
-import { FormFieldNames, IPost } from '../../constants/interfaces';
+import {
+  DeepReadonly,
+  FormFieldNames,
+  IPost,
+} from '../../constants/interfaces';
 import Card from '../../components/Card/Card';
 import useFetchAllPosts from '../../hooks/useFetchPosts';
 import FormField from '../../components/Form/FormField/FormField';
@@ -9,7 +13,7 @@ const RenderCards = ({
   data,
   txtForNotFound,
 }: {
-  data: IPost[];
+  data: DeepReadonly<IPost[]>;
   txtForNotFound: string;
 }) => {
   if (data?.length <= 0) {
@@ -30,7 +34,9 @@ const RenderCards = ({
 
 const Home = () => {
   const { posts, isLoading, errMsg } = useFetchAllPosts();
-  const [searchedResults, setSearchedResults] = useState<IPost[]>([]);
+  const [searchedResults, setSearchedResults] = useState<DeepReadonly<IPost[]>>(
+    []
+  );
   const [searchText, setSearchText] = useState<string>('');
   const timeOutRef = useRef<number | null>(null);
 
